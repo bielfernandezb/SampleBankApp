@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Sample Bank</string>
+    <string name="account_name">Cuenta Ahorro</string>
+    <string name="transaction_date">Fecha</string>
+    <string name="transaction_amount">Cantidad</string>
+    <string name="transaction_fee">Comisión</string>
+    <string name="transaction_details">Concepto</string>
+    <string name="transaction_holder">Transacción</string>
+</resources>
