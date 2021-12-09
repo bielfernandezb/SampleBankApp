@@ -5,4 +5,5 @@
     <string name="transaction_amount">Cantidad</string>
     <string name="transaction_fee">Comisión</string>
     <string name="transaction_details">Concepto</string>
+    <string name="transaction_holder">Transacción</string>
 </resources>

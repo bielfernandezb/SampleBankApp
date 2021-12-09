@@ -29,7 +29,7 @@
                 android:id="@+id/constraint_main"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/layout_round_bg">
+                android:background="@drawable/gradient">
 
                 <ImageView
                     android:layout_width="wrap_content"

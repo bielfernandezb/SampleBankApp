@@ -1,6 +1,8 @@
 package com.bielfernandezb.samplebank.view.activities
 
 import android.content.Intent
+import android.graphics.Color.GREEN
+import android.graphics.Color.RED
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -53,9 +55,13 @@ class MainActivity : AppCompatActivity(), TransactionAdapter.TransactionItemList
                 Resource.Status.SUCCESS -> {
                     if (!it.data.isNullOrEmpty()) {
                         adapter.setItems(ArrayList(it.data))
-                        binding.accountBalance.text =
+                        val accountBalance: String =
                             Utils.calcTotalAmount(it.data.toList() as ArrayList<FinancialTransaction>)
+                        binding.accountBalance.text =
+                            accountBalance
                                 .plus("€")
+                        if (accountBalance.toDouble() < 0) binding.accountBalance.setTextColor(RED) else
+                            binding.accountBalance.setTextColor(GREEN)
                     }
                 }
                 Resource.Status.ERROR ->
