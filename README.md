@@ -25,13 +25,13 @@ TBA
 ## Screenshots
  <table>
   <tr>
-     <td>Splash Screen</td>
+     <td>Login Screen</td>
      <td>Main Screen</td>
      <td>Transaction Details Screen</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
+    <td><img src="https://raw.githubusercontent.com/bielfernandezb/SampleBankApp/main/screenshots/Screenshot_1639009894.png?token=AD43P3P4OVINRNG74V32NQLBWFH5A" width=250 height=480></td>
+    <td><img src="https://raw.githubusercontent.com/bielfernandezb/SampleBankApp/main/screenshots/Screenshot_1639009901.png?token=AD43P3P7PNNUGYFSPUC2Z4LBWFH42" width=250 height=480></td>
     <td></td>
   </tr>
  </table>
