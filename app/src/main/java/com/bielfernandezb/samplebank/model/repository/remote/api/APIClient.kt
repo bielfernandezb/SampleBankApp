@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit
 
 object APIClient {
     private const val TAG = "APIClient"
-    const val BASE_URL = "https://code-challenge-e9f47.web.app/"
+    const val BASE_URL = "/"
 
     val okHttpClient: OkHttpClient
         get() {
