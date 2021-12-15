@@ -27,11 +27,9 @@ TBA
   <tr>
      <td>Login Screen</td>
      <td>Main Screen</td>
-     <td>Transaction Details Screen</td>
   </tr>
   <tr>
     <td><img src="https://raw.githubusercontent.com/bielfernandezb/SampleBankApp/main/screenshots/Screenshot_1639076158.png" width=250 height=480></td>
     <td><img src="https://raw.githubusercontent.com/bielfernandezb/SampleBankApp/main/screenshots/Screenshot_1639076164.png" width=250 height=480></td>
-    <td><img src="https://raw.githubusercontent.com/bielfernandezb/SampleBankApp/main/screenshots/Screenshot_1639076167.png" width=250 height=480></td>
   </tr>
  </table>
