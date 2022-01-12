@@ -16,7 +16,7 @@ class TransactionDetailsActivity : AppCompatActivity() {
 
         val b = intent.extras
         if (b != null) {
-            val value = b.getInt("transactionId");
+            val value = b.getInt("transactionId")
             val fragmentManager: FragmentManager = supportFragmentManager
             val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
             val transactionDetailsFragment = TransactionDetailsFragment()

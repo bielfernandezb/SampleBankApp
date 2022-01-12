@@ -13,7 +13,7 @@ class DateJSONParser : JsonDeserializer<Date?>, JsonSerializer<Date?> {
         typeOfT: Type?,
         context: JsonDeserializationContext?
     ): Date? {
-        return try {
+        try {
 
             //2018-02-01T00:00:00+01:00
             val jsonString = json.toString().replace("T", " ").replace("Z", "").replace("\"", "")
@@ -25,10 +25,10 @@ class DateJSONParser : JsonDeserializer<Date?>, JsonSerializer<Date?> {
             Log.i(DateJSONParser::class.java.simpleName, "object: $date")
 
             // 2018-02-01 00:00:00
-            date
+            return date
         } catch (e: Exception) {
             e.printStackTrace()
-            null
+            return null
         }
     }
 
@@ -37,12 +37,12 @@ class DateJSONParser : JsonDeserializer<Date?>, JsonSerializer<Date?> {
         type: Type?,
         jsonSerializationContext: JsonSerializationContext?
     ): JsonElement {
-        val dateStr: String
-        dateStr = try {
+        var dateStr: String? = null
+        try {
             val format = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ROOT)
-            format.format(date)
+            dateStr = format.format(date)
         } catch (e: Exception) {
-            ""
+            Log.i(DateJSONParser::class.java.simpleName, e.toString())
         }
         return JsonPrimitive(dateStr)
     }

@@ -5,6 +5,6 @@ import retrofit2.Response
 import retrofit2.http.GET
 
 interface TransactionsService {
-    @GET("/transactions.json")
+    @GET("b/7SP5/")
     suspend fun getAllTransactions(): Response<List<FinancialTransaction>>
 }

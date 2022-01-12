@@ -42,7 +42,7 @@ class Utils {
                 if (item.fee != null && item.amount != null) {
                     oper = item.amount - item.fee
                 } else if (item.amount != null) {
-                    oper = item.amount!!
+                    oper = item.amount
                 }
                 total += oper
             }

@@ -43,8 +43,8 @@ class MainActivity : AppCompatActivity(), TransactionAdapter.TransactionItemList
         binding.recyclerList.layoutManager = LinearLayoutManager(this)
         binding.recyclerList.adapter = adapter
         val dividerItemDecoration = DividerItemDecoration(
-            binding.recyclerList.getContext(),
-            (binding.recyclerList.layoutManager as LinearLayoutManager).getOrientation()
+            binding.recyclerList.context,
+            (binding.recyclerList.layoutManager as LinearLayoutManager).orientation
         )
         binding.recyclerList.addItemDecoration(dividerItemDecoration)
     }

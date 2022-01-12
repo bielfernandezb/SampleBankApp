@@ -14,12 +14,12 @@ import java.util.concurrent.TimeUnit
 
 object APIClient {
     private const val TAG = "APIClient"
-    const val BASE_URL = "/"
+    const val BASE_URL = "https://jsonkeeper.com/"
 
     val okHttpClient: OkHttpClient
         get() {
             val interceptor = HttpLoggingInterceptor()
-            interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
+            interceptor.level = HttpLoggingInterceptor.Level.BODY
             val interceptorConnection = Interceptor { chain -> onOnIntercept(chain) }
             return OkHttpClient.Builder()
                 .connectTimeout(70, TimeUnit.SECONDS)
