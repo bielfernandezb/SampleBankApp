@@ -1,15 +1,15 @@
-package com.bielfernandezb.samplebank.view.activities
+package com.bielfernandezb.samplebank.transaction_details.views.activities
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import com.bielfernandezb.samplebank.BaseActivity
 import com.bielfernandezb.samplebank.R
-import com.bielfernandezb.samplebank.view.fragments.TransactionDetailsFragment
+import com.bielfernandezb.samplebank.transaction_details.views.fragments.TransactionDetailsFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class TransactionDetailsActivity : AppCompatActivity() {
+class TransactionDetailsActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_transaction_details)

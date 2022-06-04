@@ -1,4 +1,4 @@
-package com.bielfernandezb.samplebank.view.activities
+package com.bielfernandezb.samplebank.transaction.views.activities
 
 import android.content.Intent
 import android.graphics.Color.GREEN
@@ -6,23 +6,23 @@ import android.graphics.Color.RED
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bielfernandezb.samplebank.BaseActivity
 import com.bielfernandezb.samplebank.databinding.ActivityMainBinding
 import com.bielfernandezb.samplebank.model.entities.FinancialTransaction
+import com.bielfernandezb.samplebank.transaction.MainViewModel
+import com.bielfernandezb.samplebank.transaction_details.views.activities.TransactionDetailsActivity
 import com.bielfernandezb.samplebank.utils.Resource
 import com.bielfernandezb.samplebank.utils.Utils
-import com.bielfernandezb.samplebank.view.MainViewModel
-import com.bielfernandezb.samplebank.view.adapters.TransactionAdapter
+import com.bielfernandezb.samplebank.transaction.adapters.TransactionAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity(), TransactionAdapter.TransactionItemListener {
+class MainActivity : BaseActivity(), TransactionAdapter.TransactionItemListener {
 
-    lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
     private val viewModel: MainViewModel by viewModels()
     private lateinit var adapter: TransactionAdapter
 
@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity(), TransactionAdapter.TransactionItemList
     }
 
     private fun setupObservers() {
-        viewModel.transactions.observe(this, Observer {
+        viewModel.transactions.observe(this) {
             when (it.status) {
                 Resource.Status.SUCCESS -> {
                     if (!it.data.isNullOrEmpty()) {
@@ -66,8 +66,9 @@ class MainActivity : AppCompatActivity(), TransactionAdapter.TransactionItemList
                 }
                 Resource.Status.ERROR ->
                     Toast.makeText(this, it.message, Toast.LENGTH_SHORT).show()
+                else -> {}
             }
-        })
+        }
         binding.swipe.setOnRefreshListener {
             viewModel.refreshTransactions()
             binding.swipe.isRefreshing = false

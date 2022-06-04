@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SampleBank">
         <activity
-            android:name=".view.activities.LoginActivity"
+            android:name="com.bielfernandezb.samplebank.login.views.activities.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,8 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.activities.MainActivity" />
-        <activity android:name=".view.activities.TransactionDetailsActivity" />
+        <activity android:name=".transaction.views.activities.MainActivity" />
+        <activity android:name=".transaction_details.views.activities.TransactionDetailsActivity" />
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

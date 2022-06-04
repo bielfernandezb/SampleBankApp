@@ -1,4 +1,4 @@
-package com.bielfernandezb.samplebank.view.adapters
+package com.bielfernandezb.samplebank.transaction.adapters
 
 import android.annotation.SuppressLint
 import android.graphics.Color.GREEN

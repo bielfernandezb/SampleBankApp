@@ -14,7 +14,7 @@ class Utils {
 
         fun convertDate(dateStr: String): String {
 
-            var result: String = ""
+            var result = ""
             try {
                 val parser = SimpleDateFormat("EEE MMM d HH:mm:ss zzz yyyy")
                 val date = parser.parse(dateStr)
@@ -28,16 +28,16 @@ class Utils {
         }
 
         fun calcAmount(amount: Double?, fee: Double?): String {
-            if (amount != null && fee != null) {
-                return (amount - fee).toString()
+            return if (amount != null && fee != null) {
+                (amount - fee).toString()
             } else {
-                return amount.toString()
+                amount.toString()
             }
         }
 
         fun calcTotalAmount(items: ArrayList<FinancialTransaction>): String {
-            var total: Double = 0.0
-            var oper: Double = 0.0
+            var total = 0.0
+            var oper = 0.0
             for (item: FinancialTransaction in items.reversed()) {
                 if (item.fee != null && item.amount != null) {
                     oper = item.amount - item.fee

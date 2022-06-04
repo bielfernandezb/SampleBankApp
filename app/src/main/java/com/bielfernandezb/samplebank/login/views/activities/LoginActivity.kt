@@ -1,24 +1,25 @@
-package com.bielfernandezb.samplebank.view.activities
+package com.bielfernandezb.samplebank.login.views.activities
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import androidx.appcompat.app.AppCompatActivity
+import com.bielfernandezb.samplebank.BaseActivity
 import com.bielfernandezb.samplebank.databinding.ActivityLoginBinding
+import com.bielfernandezb.samplebank.transaction.views.activities.MainActivity
 import com.bielfernandezb.samplebank.utils.Utils
 
-class LoginActivity : AppCompatActivity() {
-    lateinit var binding: ActivityLoginBinding
+class LoginActivity : BaseActivity() {
+
+    private lateinit var binding: ActivityLoginBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.login.setOnClickListener(View.OnClickListener {
+        binding.login.setOnClickListener {
             validateData(this)
-        })
+        }
     }
 
     private fun validateData(context: Context) {

@@ -13,7 +13,7 @@ import java.util.*
 import java.util.concurrent.TimeUnit
 
 object APIClient {
-    private const val TAG = "APIClient"
+
     const val BASE_URL = "https://jsonkeeper.com/"
 
     val okHttpClient: OkHttpClient

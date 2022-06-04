@@ -1,4 +1,4 @@
-package com.bielfernandezb.samplebank.view
+package com.bielfernandezb.samplebank.transaction_details
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

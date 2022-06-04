@@ -1,4 +1,4 @@
-package com.bielfernandezb.samplebank.view.fragments
+package com.bielfernandezb.samplebank.transaction_details.views.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,10 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import com.bielfernandezb.samplebank.databinding.FragmentTransactionDetailsBinding
 import com.bielfernandezb.samplebank.utils.Resource
 import com.bielfernandezb.samplebank.utils.Utils
-import com.bielfernandezb.samplebank.view.TransactionDetailsViewModel
+import com.bielfernandezb.samplebank.transaction_details.TransactionDetailsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -23,7 +22,7 @@ class TransactionDetailsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentTransactionDetailsBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -35,7 +34,7 @@ class TransactionDetailsFragment : Fragment() {
     }
 
     private fun setupObservers() {
-        viewModel.financialTransaction.observe(viewLifecycleOwner, Observer {
+        viewModel.financialTransaction.observe(viewLifecycleOwner) {
             when (it.status) {
                 Resource.Status.SUCCESS -> {
                     if (it.data != null) {
@@ -45,7 +44,8 @@ class TransactionDetailsFragment : Fragment() {
                 }
                 Resource.Status.ERROR ->
                     Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                else -> {}
             }
-        })
+        }
     }
 }
