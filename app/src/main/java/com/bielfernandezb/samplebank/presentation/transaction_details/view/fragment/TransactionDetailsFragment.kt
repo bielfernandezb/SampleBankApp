@@ -45,8 +45,10 @@ class TransactionDetailsFragment : BaseFragment() {
                         binding.textDetails.text = transaction.description
                     }
                 }
+
                 Resource.Status.ERROR ->
                     Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+
                 else -> {}
             }
         }

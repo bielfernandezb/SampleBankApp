@@ -5,22 +5,22 @@ import com.bielfernandezb.samplebank.domain.entity.FinancialTransaction
 import java.math.RoundingMode
 import java.text.ParseException
 import java.text.SimpleDateFormat
+import java.util.Locale
 
 class Utils {
     companion object {
+
         fun convertStringToInt(str: String): Int {
             return Integer.parseInt(str)
         }
 
         fun convertDate(dateStr: String): String {
-
             var result = ""
             try {
-                val parser = SimpleDateFormat("EEE MMM d HH:mm:ss zzz yyyy")
+                val parser = SimpleDateFormat("EEE MMM d HH:mm:ss zzz yyyy", Locale.FRANCE)
                 val date = parser.parse(dateStr)
-                val formatter = SimpleDateFormat("yyyy-MM-dd")
-                val formattedDate = formatter.format(date)
-                result = formattedDate
+                val formatter = SimpleDateFormat("yyyy-MM-dd", Locale.FRANCE)
+                result = date?.let { formatter.format(it) } ?: ""
             } catch (e: ParseException) {
                 Log.e("Date Parse Exception", e.toString())
             }
@@ -48,5 +48,7 @@ class Utils {
             }
             return total.toBigDecimal().setScale(3, RoundingMode.HALF_EVEN).toDouble().toString()
         }
+
     }
+
 }

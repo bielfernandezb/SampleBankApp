@@ -37,6 +37,7 @@ class MainActivity : BaseActivity() {
     override fun onResume() {
         super.onResume()
         setupObservers()
+        setupListeners()
     }
 
     private fun setupRecyclerView() {
@@ -82,17 +83,21 @@ class MainActivity : BaseActivity() {
                             binding.textAccountBalance.setTextColor(GREEN)
                     }
                 }
+
                 Resource.Status.ERROR ->
                     Toast.makeText(this, it.message, Toast.LENGTH_SHORT).show()
+
                 else -> {}
             }
         }
+    }
+
+    private fun setupListeners() {
         binding.swipe.setOnRefreshListener {
             viewModel.refreshTransactions()
             binding.swipe.isRefreshing = false
         }
     }
-
 
     private fun onClickedFinancialTransaction(financialTransactionId: Int) {
         Navigator().navigateToTransactionDetails(this, financialTransactionId)

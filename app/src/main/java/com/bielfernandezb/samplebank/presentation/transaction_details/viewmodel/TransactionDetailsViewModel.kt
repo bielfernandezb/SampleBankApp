@@ -18,7 +18,7 @@ class TransactionDetailsViewModel @Inject constructor(
     private val _id = MutableLiveData<Int>()
 
     private val _transaction = _id.switchMap { id ->
-        getTransactionUseCase.invoke(id)
+        getTransactionUseCase(id)
     }
 
     val financialTransaction: LiveData<Resource<FinancialTransaction>> = _transaction

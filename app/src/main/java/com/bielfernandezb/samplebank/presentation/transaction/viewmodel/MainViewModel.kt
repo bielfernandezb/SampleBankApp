@@ -19,7 +19,7 @@ class MainViewModel @Inject constructor(
 
     val transactions: LiveData<Resource<List<FinancialTransaction>>> =
         Transformations.switchMap(reloadTrigger) {
-            getRemoteTransactionListUseCase.invoke(Unit)
+            getRemoteTransactionListUseCase(Unit)
         }
 
     init {

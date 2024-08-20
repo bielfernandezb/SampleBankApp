@@ -8,7 +8,7 @@ class TransactionModelDataMapper {
 
     fun transform(transactionResource: Resource<List<FinancialTransactionDTO>>?): Resource<List<FinancialTransaction>> {
         val transactions = mutableListOf<FinancialTransaction>()
-        transactionResource?.data?.forEach { it ->
+        transactionResource?.data?.forEach {
             val transaction = FinancialTransaction(
                 it.id,
                 it.date,

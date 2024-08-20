@@ -12,7 +12,6 @@ class LoginActivity : BaseActivity() {
 
     private lateinit var binding: ActivityLoginBinding
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -35,4 +34,5 @@ class LoginActivity : BaseActivity() {
         context.startActivity(intent)
         finish()
     }
+
 }
